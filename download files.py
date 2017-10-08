@@ -11,7 +11,7 @@ import os
 import zipfile
 
 #w_dir = 'C:/Users/Matteo/OneDrive/Z - Financial Big Data/project1'
-w_dir = 'D:/OneDrive/Z - Financial Big Data/project1'
+w_dir = 'D:/OneDrive/Z - Financial Big Data/project1/Financial-Big-Data-1'
 
 
 directory = 'D:/BIG DATA'
