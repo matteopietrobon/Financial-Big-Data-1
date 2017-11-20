@@ -10,7 +10,6 @@ import time
 import os
 import zipfile
 
-#w_dir = 'C:/Users/Matteo/OneDrive/Z - Financial Big Data/project1'
 w_dir = 'D:/OneDrive/Z - Financial Big Data/project1/Financial-Big-Data-1'
 
 
@@ -60,7 +59,6 @@ for ccy in ccys:
             month = str(month_int)
             file_name = 'HISTDATA_COM_ASCII_'+ccy.upper()+'_T'+year+month.zfill(2)+'.zip'
             
-#            download_path = 'D:/OneDrive/Z - Financial Big Data/project1/project 1 data/'
             download_path = "C:/Users/teogo/Downloads/"
             
             with zipfile.ZipFile(download_path+file_name,"r") as zip_ref:

@@ -1,11 +1,20 @@
 import pandas as pd
 import numpy as np
-import matplotlib.pyplot as plt
+import os
 
 
-ccys = ['EURAUD', 'EURCHF', 'EURGBP']
+w_dir = 'D:/OneDrive/Z - Financial Big Data/project1/Financial-Big-Data-1/Toy Data'
+            
+directory = w_dir+'/Toy Data'
+
+os.chdir(w_dir)
+
+
+ccys = ['EURUSD', 'EURCHF']
 year = '2003'
 month = '1'
+
+#store = pd.HDFStore('FX-'+year+month+'.h5')
 
 x = ccys[0]
 file_name = 'DAT_ASCII_'+ x +'_T_'+ year+month.zfill(2)+'.csv'
@@ -43,12 +52,18 @@ df = df.dropna(how='any')
 
 df['datetime'] = pd.to_datetime(df.index.astype(str)+'000',format="%Y%m%d %H%M%S%f")
 
-df = df.sort(columns=['datetime'])
+df = df.sort_values('datetime')
 
 #%%
 
 df_final = pd.DataFrame(df.iloc[:,:-1])
 df_final.index = df['datetime']
 
-df_final.to_csv('FX-'+year+month+'.csv')
+
+
+df_final.to_hdf('FX-'+year+month.zfill(2)+'.h5', 'FX'+year+month.zfill(2), mode='w')
+
+#pd.read_hdf('foo', 'bar')
+
+#df_final.to_csv('FX-'+year+month+'.csv')
 #df_final.to_json('FX-'+year+month.zfill(2)+'.json')
