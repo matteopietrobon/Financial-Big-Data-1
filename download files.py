@@ -22,7 +22,6 @@ if not os.path.exists(directory):
 
 
 driver = webdriver.Chrome()
-driver.implicitly_wait(30)
 
 ccys = ['eurusd','eurchf','eurgbp','eurjpy','euraud']
 
