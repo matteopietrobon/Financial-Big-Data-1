@@ -32,6 +32,14 @@ for ccy in ccys:
             df = df.drop('erase', axis=1)
         
             df = df.dropna(how='any')
+            
+            if year_int<=2004:
+                if ccy == 'EURGBP':
+                    df.drop(df[df.Bid > 1].index, inplace=True)
+                if ccy == 'EURCHF':
+                    df.drop(df[df.Ask < 1.2].index, inplace=True)
+                if ccy == 'EURJPY':
+                    df.drop(df[df.Bid < 100].index, inplace=True)
         
             #Change index to datetime
             df['datetime'] = pd.to_datetime(df.index.astype(str)+'000',format="%Y%m%d %H%M%S%f")
