@@ -55,6 +55,9 @@
 
 
 \begin{document}
+	
+	
+\bibliographystyle{ieeetr}
 
 \newcommand*\xbar[1]{%
   \hbox{%
@@ -203,7 +206,9 @@ Please note that we have not examined the testing data.
 
 \section{Mean Reversion Strategy}
 
-The FX environment is famous for its mean reverting properties. We tried to exploit them by developing this strategy. The main idea behind it is that the price process is quite stable and, when a big event happens, the market can overreact and will then return to a more balanced level. Since we are only looking at the price process, our approach is very limited because we must decide whether there was an overshoot just from the magnitude of the shock and this is not trivial.\\
+\subsection{Overview}
+
+The FX environment is famous for its mean reverting properties. We tried to exploit them by developing this strategy. The main idea behind it is that the price process is quite stable and, when a big event happens, the market can overreact and will then return to a more balanced level. Since we are only looking at the price process, our approach is very limited because we must decide whether there was an overshoot just from the magnitude of the shock and this is not trivial. These features were known to market participants well before the start of our dataset, as reported in the survey \cite{cheung_currency_2001}, so we saw no problem in implementing this strategy.\\
 In Figure \ref{fig:7} and \ref{fig:8} we report two extreme cases of what we have just said. In Figure \ref{fig:7} the mean reversion effect is almost not present, the jumps are neat and they are not followed by a recall. In Figure \ref{fig:8}, on the contrary, we have some nice oscillations that we managed to exploit. The two lines that we plotted are the Bid and the Ask.
 
 \begin{figure}[h]
@@ -226,6 +231,7 @@ In Figure \ref{fig:7} and \ref{fig:8} we report two extreme cases of what we hav
 
 As it was said before, the idea behind this strategy is quite simple: when the price goes too high you short, when it goes too low you buy. The difficult part is how to understand if the price was too high or too low.\\
 We did that by introducing a long-term mean and a short-term mean. When the difference between the two reached a threshold, we opened a position. We wanted the threshold not to be just a fixed amount, but to reflect the current volatility too. Computing the rolling standard deviation was not possible for our amount of data, so we used the spread as a proxy for it. Finally, the threshold was computed as a hard-coded multiplier times the spread.\\
+The Bid-Ask spread might not be the best proxy for volatility, but it was very fast to compute and there is a statistically significant positive correlation between the two. These results are presented in \cite{hussain_intraday_2011} and in several other papers before this.\\
 To summarise, this is the core of our strategy:
 \begin{verbatim}
       if (df['short_mean']-df['long_mean'] >  df['spread']*multiplier) ---> SHORT
@@ -258,7 +264,7 @@ We decided to test our strategy out-of-sample for all the currency pairs except 
 	\end{minipage}
 \end{figure}
 
-\subsection{Outlook}
+\subsection{Potential Improvements}
 
 There is definitely a lot that can be improved in this strategy. For instance, instead of holding the position for a fixed amount of data entries, we could have implemented two other thresholds: one where we exited if the strategy worked and a stop-loss threshold. However, the training time to find optimal amounts for those thresholds would have been too big.\\
 Another big issue is that sometimes we are entering the position too soon and we are not profiting from the whole recall. Handling better the entering time would definitely improve the performance.\\
@@ -271,20 +277,20 @@ Finally, a mean reversion strategy essentially implies trading on noise and hopi
 
 \subsection{Overview}
 
-The idea behind the second strategy is deeply different from the underlying the high-frequency mean reversion strategy. Here we want to achieve positive returns with sophisticated and computationally intensive algorithms. To do so, we restrict our interest on a specific window of time from 2011 to 2017. The first thing we did, was to group tick-by-tick data into batches of 30 minutes, the result is a cleaner time series with insightful information about volatility, volumes (estimated as the number of trades occurring within the 30 minutes) and range. A 30-minute window seems to be a good trade off allowing to reduce the noise, but keeping a reasonable amount of data to train our predictive models. Each 30-minute entry of our dataset is identified by the first and last Bid-Ask quotes, a volume proxy a volatility measure and the min and max of the series (This part is done by the \textit{Group\_by\_Time.py} code).\\
+The idea behind the second strategy is deeply different from the one underlying the high-frequency mean reversion strategy. Here we want to achieve positive returns with sophisticated and computationally intensive algorithms. To do so, we restrict our interest on a specific window of time from 2011 to 2017. The first thing we did, was to group tick-by-tick data into batches of 30 minutes, the result is a cleaner time series with insightful information about volatility, volumes (estimated as the number of trades occurring within the 30 minutes) and range. A 30-minute window seems to be a good trade off allowing to reduce the noise, but keeping a reasonable amount of data to train our predictive models. Each 30-minute entry of our dataset is identified by the first and last Bid-Ask quotes, a volume proxy a volatility measure and the min and max of the series (This part is done by the \textit{Group\_by\_Time.py} code).\\
 The idea then is to use the data to train several models to predict the sign of the return and trade on this information. The algorithm is coded in a way that every month the model is re-trained on the previous 3 months of data so that out-of-sample progressively becomes in-sample as the window rolls in the future. We chose a 3-month window because it was the minimum amount of time that allowed to properly train the models incorporating only the most recent data, allowing to adapt quickly to changes in the market. One last crucial point is that the model and feature selection have been done on the first 6 months of data (January - June 2011) that have not been used in the backtesting results that will be presented later. In this way all the results are completely out-of-sample.
 
 \subsection{Feature and model selection}
 
-Accuracy was our favourite metric of performance assessment in our three-class classification problem $\{-1,0,1\}$.\\ Since we have to deal with relevant spreads we cannot afford to trade a lot and hope for a statistical edge to prevail. Therefore we chose to classify a return as belonging to the positive class ($\{1\}$) if it is bigger than the in-sample average positive return and negative ($\{-1\}$) if it is smaller than the in-sample negative mean. This way we have many returns belonging to class zero, but we also have a reasonable number of trades per month (5-10). Evaluating the performance of a model was not easy. Moreover, trying to do so while attempting at not only identifying the sign of the return but also the magnitude posed challenges in understanding which features could help us better predict. We tried to assess the impact of some crucial features by evaluating the improvement in accuracy and the importance metrics offered by a random forest tree. In the end, we used a big-data approach and put together a total of 80 different features. Some are just lags of returns, others are lags of volumes and volatilities. A couple of features that at the initial stages proved to be interesting are a Gaussian measure of returns:
+Accuracy was our favourite metric of performance assessment in our three-class classification problem $\{-1,0,1\}$.\\ Since we have to deal with relevant spreads we cannot afford to trade a lot and hope for a statistical edge to prevail. Therefore we chose to classify a return as belonging to the positive class ($\{1\}$) if it is bigger than the in-sample average positive return and negative ($\{-1\}$) if it is smaller than the in-sample negative mean. This way we have many returns belonging to class zero, but we also have a reasonable number of trades per month (5-10). Evaluating the performance of a model was not easy. Moreover, trying to do so while attempting not only to identify the sign of the return but also the magnitude posed challenges in understanding which features could help us better. We tried to assess the impact of some crucial features by evaluating the improvement in accuracy and the importance metrics offered by a random forest tree. In the end, we used a big-data approach and put together a total of 80 different features. Some are just lags of returns, others are lags of volumes and volatilities. A couple of features that at the initial stages proved to be interesting are a Gaussian measure of returns:
 
 $$
 g_i = \frac{r_i - \mu_i}{\sigma_i}
 $$
 
-Where $\mu_i$ and $\sigma_i$ are the mean and standard deviation of the past 10 returns. Another interesting measure we wanted to include is the \textit{Relative Strength Index} that is an indicator that ranges from 0 to 100 and assesses the potential of the price to rebound. Typically a value of RSI below 30 and above 70 are respectively signs of respectively long and short potential. Another indicator that we used is just the difference between a short and a long exponential moving average of the price, this is supposed to give an idea of the ongoing trend. At last we considered some interaction measures that seemed to be really appreciated by Random Forest trees when training (of course, in the first 6 months not used in the backtesting).\\
+Where $\mu_i$ and $\sigma_i$ are the mean and standard deviation of the past 10 returns. Another interesting measure we wanted to include is the \textit{Relative Strength Index} that is an indicator that ranges from 0 to 100 and assesses the potential of the price to rebound. Typically a value of RSI below 30 and above 70 are signs of respectively long and short potential. Another indicator that we used is just the difference between a short-term and a long-term exponential moving average of the price, this is supposed to give an idea of the ongoing trend. At last we considered some interaction measures that seemed to be really appreciated by Random Forest trees when training (of course, in the first 6 months not used in the backtesting).\\
 Once the features are built, the dataset is standardized (all with in sample mean and variance), and the data is fed into a Gaussian Kernel PCA. In-sample we noticed that the Gaussian Kernel was the only one able to capture some relevant information. The only exception is represented by the EURUSD pair, where lower spreads made us choose a plain linear PCA because it gave more noisy results and allowed to trade more (in fact we have more trades on this currency). In the end we had 15 features.\\
-For what concerns the model selection, we tried a different set of models, we opted in the end for the ones that in-sample prooved to be the more robust and precise. We decided to use a majority voting predictor, where the votes are given by a logistic regression, a gaussian kernel support vector classifier, a quadratic discriminant analysis and an AdaBoost classifier. The last two have the great adavantage that besides offering good in-sample accuracies, they prooved to be really resistent to changes in the features and amount of data given and in addition, they do not require hyperparameter tuning.\\ 
+For what concerns the model selection, we tried a different set of models, we opted in the end for the ones that in-sample proved to be the more robust and precise. We decided to use a majority voting predictor, where the votes are given by a logistic regression, a Gaussian kernel support vector classifier, a quadratic discriminant analysis and an AdaBoost classifier. The last two have the great advantage that besides offering good in-sample accuracies, they proved to be really resistant to changes in the features and amount of data given and in addition, they do not require hyperparameter tuning.\\ 
 
 \subsection{Implementation}
 
@@ -303,11 +309,11 @@ The main backtesting code then calls the \textit{model\_class} each month backte
 
 \subsection{Results}
 
-We immediately excluded the EURJPY cross from the backtesting because from the in-sample test we noticed that spreads were extremely high, and moreover our model was not able to capture a significant amount of information from the data. For the other crosses, backtesting results (Raw Pnl and PnL net of spreads) can be found in Graphs 11 - 14.\\
+We immediately excluded the EURJPY cross from the backtesting because from the in-sample test we noticed that spreads were extremely high, and moreover our model was not able to capture a significant amount of information from the data. For the other crosses, backtesting results (Raw Pnl and PnL net of spreads) can be found in Graphs \ref{fig:11}, \ref{fig:12}, \ref{fig:13} and \ref{fig:14}.\\
 It is clear how spreads really harm the ability of the model to make good trades. With a quick glance at the spreads, we noticed that these are significantly high (EURUSD offers a 4 pip spread in 2017 which is completely out of the market nowadays with brokers offering less than 1 pip spread or zero spreads on currency futures).\\
 
 
-\begin{figure}
+\begin{figure}[h]
 	\centering
 	\begin{minipage}{.5\textwidth}
 		\centering
@@ -335,37 +341,29 @@ It is clear how spreads really harm the ability of the model to make good trades
 	\end{minipage}
 \end{figure}
 
-As said before high spreads offset the job done by the models in predicting the signs of returns. We can see how the net performance of the strategies is related to the bid-ask spread, the higher the spread (and the number of trades) the worse the performance. For the EURGBP cross despite the spread is reasonable, we trade too much, paying a lot in transaction costs.\\
-
-%\begin{figure}
-%\centering
-\includegraphics[width=\linewidth]{Figures/Spreads.jpeg}
+As said before, high spreads offset the job done by the models in predicting the signs of returns. We can see how the net performance of the strategies is related to the bid-ask spread, the higher the spread (and the number of trades) the worse the performance. For the EURGBP cross despite the spread is reasonable, we trade too much, paying a lot in transaction costs. The evolution of the spreads is reported in figure \ref{fig:15}.
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.75\linewidth]{Figures/Spreads.jpeg}
 \captionof{figure}{Spreads Evolution}
 \label{fig:15}
-%\end{figure}
-\vspace{10pt}
-
-
-	
+\end{figure}
 Moreover, there is a time-effect, in the recent years spreads have definitely tightened making some strategies slightly profitable.\\
-At last, we also tried to see how an allocation of the strategies together could perform (we apply this only to the net performance, because with such negative net performances it would make no sense to do so). We implemented both an equally weighted and a risk parity allocation (weights in the portfolio are inversely proportional to variance). The second allocation is created with a 6-month rolling window where we estimate variance of each cross to build the portfolio. (This part is done in the \textit{Portfolio\_perf.py} code), results are in Figure 16.
-
-%\begin{figure}
-%\centering
-\includegraphics[width=\linewidth]{Figures/Portfolios.jpeg}
+At last, we also tried to see how an allocation of the strategies together could perform (we apply this only to the raw performance, because with such negative net performances it would make no sense to do so). We implemented both an equally weighted and a risk parity allocation (weights in the portfolio are inversely proportional to variance). The second allocation is created with a 6-month rolling window where we estimate variance of each cross to build the portfolio. (This part is done in the \textit{Portfolio\_perf.py} code), results are in Figure \ref{fig:16}.
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.75\linewidth]{Figures/Portfolios.jpeg}
 \captionof{figure}{Portfolios Backtesting result}
 \label{fig:16}
-%\end{figure}
-\vspace{10pt}
-
-	
+\end{figure}
 As we can see the portfolio approach smooths a bit our equity lines, bringing the sharpe ratio up to 0.2674.\\
-
 
 \subsection{Potential Improvements}
 
 The first thing to improve the strategy would be to look for smaller spreads. This is crucial, because with less restrictive criteria to enter a trade (i.e. more trades per month) the raw PnLs significantly increased. We followed this approach in the EURUSD pair, but still we could be more aggressive on the currency.\\
 Other improvements are in the area of position targets, we might have considered using take profits instead of keeping a position opened for strictly 30 minutes. This would have led on additional optimization and therefore we left it aside. Anyway we are confident that this could bring additional gains to our strategy.\\
+
+\bibliography{Bibliography} 
 
 
 \end{document}

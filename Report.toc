@@ -6,6 +6,13 @@
 \contentsline {subsection}{\numberline {3.2}Data wrangling}{2}{subsection.3.2}
 \contentsline {subsection}{\numberline {3.3}Descriptive Statistics}{3}{subsection.3.3}
 \contentsline {section}{\numberline {4}Mean Reversion Strategy}{3}{section.4}
-\contentsline {subsection}{\numberline {4.1}Implementation}{3}{subsection.4.1}
-\contentsline {subsection}{\numberline {4.2}Results}{5}{subsection.4.2}
-\contentsline {subsection}{\numberline {4.3}Outlook}{6}{subsection.4.3}
+\contentsline {subsection}{\numberline {4.1}Overview}{3}{subsection.4.1}
+\contentsline {subsection}{\numberline {4.2}Implementation}{3}{subsection.4.2}
+\contentsline {subsection}{\numberline {4.3}Results}{5}{subsection.4.3}
+\contentsline {subsection}{\numberline {4.4}Potential Improvements}{5}{subsection.4.4}
+\contentsline {section}{\numberline {5}30-minutes Strategy}{6}{section.5}
+\contentsline {subsection}{\numberline {5.1}Overview}{6}{subsection.5.1}
+\contentsline {subsection}{\numberline {5.2}Feature and model selection}{6}{subsection.5.2}
+\contentsline {subsection}{\numberline {5.3}Implementation}{7}{subsection.5.3}
+\contentsline {subsection}{\numberline {5.4}Results}{8}{subsection.5.4}
+\contentsline {subsection}{\numberline {5.5}Potential Improvements}{10}{subsection.5.5}

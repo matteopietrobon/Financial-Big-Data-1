@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6350 64-bit) (preloaded format=pdflatex 2017.10.4)  29 DEC 2017 14:37
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6350 64-bit) (preloaded format=pdflatex 2017.10.4)  7 JAN 2018 10:15
 entering extended mode
 **./Report.tex
 (Report.tex
@@ -1527,19 +1527,19 @@ Package lastpage Info: Please have a look at the pageslts package at
 (lastpage)             https://www.ctan.org/pkg/pageslts
 (lastpage)             ! on input line 57.
 \c@lstlisting=\count347
-<Figures/EPFL_LOG.pdf, id=46, 158.5925pt x 77.28876pt>
+<Figures/EPFL_LOG.pdf, id=74, 158.5925pt x 77.28876pt>
 File: Figures/EPFL_LOG.pdf Graphic file (type pdf)
 
 <use Figures/EPFL_LOG.pdf>
-Package pdftex.def Info: Figures/EPFL_LOG.pdf used on input line 77.
+Package pdftex.def Info: Figures/EPFL_LOG.pdf used on input line 80.
 (pdftex.def)             Requested size: 142.26378pt x 69.33633pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 91--92
+Underfull \hbox (badness 10000) in paragraph at lines 94--95
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 95--99
+Underfull \hbox (badness 10000) in paragraph at lines 98--102
 
  []
 
@@ -1589,138 +1589,208 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.110 \newpage
+l.113 \newpage
                [1]
-Package hyperref Info: bookmark level for unknown todo defaults to 0 on input l
-ine 120.
-
-Underfull \hbox (badness 10000) in paragraph at lines 125--127
+Underfull \hbox (badness 10000) in paragraph at lines 128--130
 
  []
 
-LaTeX Font Info:    Try loading font information for OMS+lmr on input line 133.
+LaTeX Font Info:    Try loading font information for OMS+lmr on input line 136.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\lm\omslmr.fd"
 File: omslmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Font shape `OMS/lmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 133.
+(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 136.
  [2]
-<Figures/counts.png, id=90, 1300.86pt x 1072.4868pt>
+<Figures/counts.png, id=124, 1300.86pt x 1072.4868pt>
 File: Figures/counts.png Graphic file (type png)
  <use Figures/counts.png>
-Package pdftex.def Info: Figures/counts.png used on input line 167.
+Package pdftex.def Info: Figures/counts.png used on input line 170.
 (pdftex.def)             Requested size: 226.48395pt x 186.72247pt.
 
-<Figures/stats_aud.png, id=92, 1300.86pt x 1072.4868pt>
+<Figures/stats_aud.png, id=126, 1300.86pt x 1072.4868pt>
 File: Figures/stats_aud.png Graphic file (type png)
 
 <use Figures/stats_aud.png>
-Package pdftex.def Info: Figures/stats_aud.png used on input line 173.
+Package pdftex.def Info: Figures/stats_aud.png used on input line 176.
 (pdftex.def)             Requested size: 226.48395pt x 186.72247pt.
 
-<Figures/stats_chf.png, id=93, 1300.86pt x 1072.4868pt>
+<Figures/stats_chf.png, id=127, 1300.86pt x 1072.4868pt>
 File: Figures/stats_chf.png Graphic file (type png)
 
 <use Figures/stats_chf.png>
-Package pdftex.def Info: Figures/stats_chf.png used on input line 179.
+Package pdftex.def Info: Figures/stats_chf.png used on input line 182.
 (pdftex.def)             Requested size: 226.48395pt x 186.72247pt.
 
-<Figures/stats_gbp.png, id=94, 1300.86pt x 1072.4868pt>
+<Figures/stats_gbp.png, id=128, 1300.86pt x 1072.4868pt>
 File: Figures/stats_gbp.png Graphic file (type png)
 
 <use Figures/stats_gbp.png>
-Package pdftex.def Info: Figures/stats_gbp.png used on input line 185.
+Package pdftex.def Info: Figures/stats_gbp.png used on input line 188.
 (pdftex.def)             Requested size: 226.48395pt x 186.72247pt.
 
-<Figures/stats_jpy.png, id=95, 1300.86pt x 1072.4868pt>
+<Figures/stats_jpy.png, id=129, 1300.86pt x 1072.4868pt>
 File: Figures/stats_jpy.png Graphic file (type png)
 
 <use Figures/stats_jpy.png>
-Package pdftex.def Info: Figures/stats_jpy.png used on input line 191.
+Package pdftex.def Info: Figures/stats_jpy.png used on input line 194.
 (pdftex.def)             Requested size: 226.48395pt x 186.72247pt.
 
-<Figures/stats_usd.png, id=96, 1300.86pt x 1072.4868pt>
+<Figures/stats_usd.png, id=130, 1300.86pt x 1072.4868pt>
 File: Figures/stats_usd.png Graphic file (type png)
 
 <use Figures/stats_usd.png>
-Package pdftex.def Info: Figures/stats_usd.png used on input line 197.
+Package pdftex.def Info: Figures/stats_usd.png used on input line 200.
 (pdftex.def)             Requested size: 226.48395pt x 186.72247pt.
 
-<Figures/strat_1_bad_jpy_14_03.png, id=101, 1300.86pt x 1072.4868pt>
+<Figures/strat_1_bad_jpy_14_03.png, id=136, 1300.86pt x 1072.4868pt>
 File: Figures/strat_1_bad_jpy_14_03.png Graphic file (type png)
 
 <use Figures/strat_1_bad_jpy_14_03.png>
 Package pdftex.def Info: Figures/strat_1_bad_jpy_14_03.png used on input line 2
-13.
+18.
 (pdftex.def)             Requested size: 226.48395pt x 186.72247pt.
 
-<Figures/strat_1_good_chf_14_05.png, id=102, 1300.86pt x 1072.4868pt>
+<Figures/strat_1_good_chf_14_05.png, id=137, 1300.86pt x 1072.4868pt>
 File: Figures/strat_1_good_chf_14_05.png Graphic file (type png)
 
 <use Figures/strat_1_good_chf_14_05.png>
 Package pdftex.def Info: Figures/strat_1_good_chf_14_05.png used on input line 
-219.
+224.
 (pdftex.def)             Requested size: 226.48395pt x 186.72247pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-LaTeX Font Info:    Try loading font information for T1+lmtt on input line 230.
+LaTeX Font Info:    Try loading font information for T1+lmtt on input line 236.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\lm\t1lmtt.fd"
 File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 ) [3] [4 <./Figures/counts.png> <./Figures/stats_aud.png> <./Figures/stats_chf.
 png> <./Figures/stats_gbp.png> <./Figures/stats_jpy.png> <./Figures/stats_usd.p
 ng>]
-<Figures/strat_1_performance_in.png, id=122, 1300.86pt x 1072.4868pt>
+<Figures/strat_1_performance_in.png, id=159, 1300.86pt x 1072.4868pt>
 File: Figures/strat_1_performance_in.png Graphic file (type png)
 
 <use Figures/strat_1_performance_in.png>
 Package pdftex.def Info: Figures/strat_1_performance_in.png used on input line 
-249.
+255.
 (pdftex.def)             Requested size: 226.48395pt x 186.72247pt.
 
-<Figures/strat_1_performance_out.png, id=123, 1300.86pt x 1072.4868pt>
+<Figures/strat_1_performance_out.png, id=160, 1300.86pt x 1072.4868pt>
 File: Figures/strat_1_performance_out.png Graphic file (type png)
 
 <use Figures/strat_1_performance_out.png>
 Package pdftex.def Info: Figures/strat_1_performance_out.png used on input line
- 255.
+ 261.
 (pdftex.def)             Requested size: 226.48395pt x 186.72247pt.
- [5 <./Figures/strat_1_bad_jpy_14_03.png> <./Figures/strat_1_good_chf_14_05.png
-> <./Figures/strat_1_performance_in.png> <./Figures/strat_1_performance_out.png
->] 
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[5 <./Figures/strat_1_bad_jpy_14_03.png> <./Figures/strat_1_good_chf_14_05.png>
+] [6 <./Figures/strat_1_performance_in.png> <./Figures/strat_1_performance_out.
+png>]
+Underfull \hbox (badness 10000) in paragraph at lines 291--294
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 308--309
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 312--314
+
+ []
+
+[7] <Figures/EURUSD.jpeg, id=186, 769.87625pt x 560.0925pt>
+File: Figures/EURUSD.jpeg Graphic file (type jpg)
+
+<use Figures/EURUSD.jpeg>
+Package pdftex.def Info: Figures/EURUSD.jpeg used on input line 320.
+(pdftex.def)             Requested size: 226.48395pt x 164.76434pt.
+ <Figures/EURGBP.jpeg, id=187, 720.6925pt x 570.13pt>
+File: Figures/EURGBP.jpeg Graphic file (type jpg)
+
+<use Figures/EURGBP.jpeg>
+Package pdftex.def Info: Figures/EURGBP.jpeg used on input line 326.
+(pdftex.def)             Requested size: 226.48395pt x 179.16562pt.
+
+<Figures/EURAUD.jpeg, id=188, 723.70375pt x 542.025pt>
+File: Figures/EURAUD.jpeg Graphic file (type jpg)
+
+<use Figures/EURAUD.jpeg>
+Package pdftex.def Info: Figures/EURAUD.jpeg used on input line 332.
+(pdftex.def)             Requested size: 226.48395pt x 169.63051pt.
+
+<Figures/EURCHF.jpeg, id=189, 724.7075pt x 553.06625pt>
+File: Figures/EURCHF.jpeg Graphic file (type jpg)
+
+<use Figures/EURCHF.jpeg>
+Package pdftex.def Info: Figures/EURCHF.jpeg used on input line 338.
+(pdftex.def)             Requested size: 226.48395pt x 172.84122pt.
+
+<Figures/Spreads.jpeg, id=191, 756.8275pt x 597.23125pt>
+File: Figures/Spreads.jpeg Graphic file (type jpg)
+
+<use Figures/Spreads.jpeg>
+Package pdftex.def Info: Figures/Spreads.jpeg used on input line 347.
+(pdftex.def)             Requested size: 339.72592pt x 268.08632pt.
+ [8 <./Figures/EURUSD.jpeg> <./Figures/EURGBP.jpeg> <./Figures/EURAUD.jpeg> <./
+Figures/EURCHF.jpeg>]
+<Figures/Portfolios.jpeg, id=199, 778.91pt x 584.1825pt>
+File: Figures/Portfolios.jpeg Graphic file (type jpg)
+
+<use Figures/Portfolios.jpeg>
+Package pdftex.def Info: Figures/Portfolios.jpeg used on input line 355.
+(pdftex.def)             Requested size: 339.72592pt x 254.79478pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 359--360
+
+ []
+
+[9 <./Figures/Spreads.jpeg> <./Figures/Portfolios.jpeg>]
+Underfull \hbox (badness 10000) in paragraph at lines 363--365
+
+ []
+
+(Report.bbl) 
 AED: lastpage setting LastPage
-[6]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 274.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 274.
+[10]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 369.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 369.
  (Report.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 274.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 274.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 369.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 369.
 Package rerunfilecheck Info: File `Report.out' has not changed.
-(rerunfilecheck)             Checksum: 837BAABA0022CEF9B64FA33B802F9081;588.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 274.
+(rerunfilecheck)             Checksum: 78049AB488D733558FA63DDEBF04AA9D;1051.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 369.
  ) 
 Here is how much of TeX's memory you used:
- 31146 strings out of 493323
- 583599 string characters out of 3139114
- 647188 words of memory out of 3000000
- 34145 multiletter control sequences out of 15000+200000
+ 31139 strings out of 493323
+ 582955 string characters out of 3139114
+ 646474 words of memory out of 3000000
+ 34112 multiletter control sequences out of 15000+200000
  588626 words of font info for 60 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 62i,9n,77p,10356b,708s stack positions out of 5000i,500n,10000p,200000b,50000s
-{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/lm/lm-ec.enc}{C:/Program Files/M
-iKTeX 2.9/fonts/enc/dvips/lm/lm-rm.enc}{C:/Program Files/MiKTeX 2.9/fonts/enc/d
-vips/lm/lm-mathsy.enc}<C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmbx10
-.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmbx12.pfb><C:/Program 
-Files/MiKTeX 2.9/fonts/type1/public/lm/lmr10.pfb><C:/Program Files/MiKTeX 2.9/f
-onts/type1/public/lm/lmr7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/l
-m/lmri10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmsy10.pfb><C:/
-Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmtt10.pfb>
-Output written on Report.pdf (7 pages, 1251652 bytes).
+ 62i,8n,77p,10356b,512s stack positions out of 5000i,500n,10000p,200000b,50000s
+{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/lm/lm-mathit.enc}{C:/Program Fil
+es/MiKTeX 2.9/fonts/enc/dvips/lm/lm-ec.enc}{C:/Program Files/MiKTeX 2.9/fonts/e
+nc/dvips/lm/lm-rm.enc}{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/lm/lm-mathsy
+.enc}<C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmbx10.pfb><C:/Program 
+Files/MiKTeX 2.9/fonts/type1/public/lm/lmbx12.pfb><C:/Program Files/MiKTeX 2.9/
+fonts/type1/public/lm/lmmi10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/publi
+c/lm/lmmi7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmr10.pfb><C:
+/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmr7.pfb><C:/Program Files/MiKT
+eX 2.9/fonts/type1/public/lm/lmri10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type
+1/public/lm/lmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmtt1
+0.pfb>
+Output written on Report.pdf (11 pages, 1707605 bytes).
 PDF statistics:
- 172 PDF objects out of 1000 (max. 8388607)
- 22 named destinations out of 1000 (max. 500000)
- 148 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 256 PDF objects out of 1000 (max. 8388607)
+ 38 named destinations out of 1000 (max. 500000)
+ 234 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -1,0 +1,6 @@
+1. You should replace the working directories with their equivalent on your machine
+2. To download the data: download files.py -> will use chromedriver too
+3. To clean the data: Merge_files.py
+
+4. Mean reversion strategy: strat_reversal.py (the same files, but followed by _2017 are for the out-of-sample testing)
+

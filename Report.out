@@ -5,6 +5,13 @@
 \BOOKMARK [2][-]{subsection.3.2}{Data wrangling}{section.3}% 5
 \BOOKMARK [2][-]{subsection.3.3}{Descriptive Statistics}{section.3}% 6
 \BOOKMARK [1][-]{section.4}{Mean Reversion Strategy}{}% 7
-\BOOKMARK [2][-]{subsection.4.1}{Implementation}{section.4}% 8
-\BOOKMARK [2][-]{subsection.4.2}{Results}{section.4}% 9
-\BOOKMARK [2][-]{subsection.4.3}{Outlook}{section.4}% 10
+\BOOKMARK [2][-]{subsection.4.1}{Overview}{section.4}% 8
+\BOOKMARK [2][-]{subsection.4.2}{Implementation}{section.4}% 9
+\BOOKMARK [2][-]{subsection.4.3}{Results}{section.4}% 10
+\BOOKMARK [2][-]{subsection.4.4}{Potential Improvements}{section.4}% 11
+\BOOKMARK [1][-]{section.5}{30-minutes Strategy}{}% 12
+\BOOKMARK [2][-]{subsection.5.1}{Overview}{section.5}% 13
+\BOOKMARK [2][-]{subsection.5.2}{Feature and model selection}{section.5}% 14
+\BOOKMARK [2][-]{subsection.5.3}{Implementation}{section.5}% 15
+\BOOKMARK [2][-]{subsection.5.4}{Results}{section.5}% 16
+\BOOKMARK [2][-]{subsection.5.5}{Potential Improvements}{section.5}% 17
