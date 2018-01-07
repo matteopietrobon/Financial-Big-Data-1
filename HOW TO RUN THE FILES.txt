@@ -4,3 +4,5 @@
 
 4. Mean reversion strategy: strat_reversal.py (the same files, but followed by _2017 are for the out-of-sample testing)
 
+5. Second Strategy: Run the code Group_by_Time.py that creates 30-minute batches in the Grouped_Data folder (actually this data is    already there so this step could be skipped). Then run the Backtesting.py code that will output the strategy result (Backtesting from 2014 to 2017 on EURCHF).
+
